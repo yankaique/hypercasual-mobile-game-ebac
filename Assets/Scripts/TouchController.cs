@@ -7,7 +7,6 @@ public class TouchController : MonoBehaviour
     public Vector2 pastPosition;
     public float velocity = 1f;
 
-    // Update is called once per frame
     void Update()
     {
         if(Input.GetMouseButton(0))
