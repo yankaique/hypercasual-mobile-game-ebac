@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Ebac.core.Singleton;
+using TMPro;
 public class PlayerController : Singleton<PlayerController>
 {
     [Header("Lerp Helper")]
@@ -16,6 +17,8 @@ public class PlayerController : Singleton<PlayerController>
     public string tagToCheckEndLine = "EndLine";
 
     public GameObject endScreen;
+    public bool invencible = false;
+    public TextMeshPro uiTextPowerUp;
 
     #region privates
     private Vector3 _position;
@@ -55,11 +58,20 @@ public class PlayerController : Singleton<PlayerController>
     {
         if (collision.transform.tag == tagToCheckEnemy || collision.transform.tag == tagToCheckEndLine)
         {
-            EndGame();
+            if(!invencible) EndGame();
         }
     }
 
     #region PowerUps
+    public void SetPowerUpText(string text)
+    {
+        uiTextPowerUp.text = text;
+    }
+    public void PowerUpInvencible(bool d = true)
+    {
+        invencible = d;
+    }
+
     public void PowerUpSpeedUp(float f)
     {
         _currentSpeed = f;
@@ -68,6 +80,8 @@ public class PlayerController : Singleton<PlayerController>
     public void ResetSpeed()
     {
         _currentSpeed = speed;
+        invencible = false;
+        uiTextPowerUp.text = "";
     }
     #endregion
 }
