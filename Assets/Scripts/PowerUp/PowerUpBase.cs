@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PowerUpBase : ItemCollectableBase
 {
+    [Header("Power Up Base")]
     public float powerUpDuration;
 
     protected override void OnCollect()
@@ -13,12 +14,8 @@ public class PowerUpBase : ItemCollectableBase
     }
 
     protected virtual void StartPowerUp() {
-        Debug.Log("Start Power Up");
         Invoke("EndPowerUp", powerUpDuration);
     }
 
-    protected virtual void EndPowerUp() { 
-        Debug.Log("End Power Up");
-
-    }
+    protected virtual void EndPowerUp() {}
 }
