@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2275224215653756181}
   - component: {fileID: 2275224215653756180}
   - component: {fileID: 2275224215653756179}
+  - component: {fileID: 4606833900688687968}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -110,10 +111,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ed2323be001534cb617b0ee10087f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  compareTag: Player
+  compareTag: CoinCollector
   particleSystem: {fileID: 0}
   timeToHideParticle: 0.3
   graphicItem: {fileID: 0}
+--- !u!114 &4606833900688687968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2275224215653756178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 928adb54616c271438f018007306d323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  compareTag: CoinCollector
+  particleSystem: {fileID: 0}
+  timeToHideParticle: 0.3
+  graphicItem: {fileID: 0}
+  collider: {fileID: 2275224215653756180}
+  lerp: 5
+  minDistance: 1
 --- !u!1 &7897910448486376412
 GameObject:
   m_ObjectHideFlags: 0

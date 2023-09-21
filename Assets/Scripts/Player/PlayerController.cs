@@ -21,6 +21,9 @@ public class PlayerController : Singleton<PlayerController>
     public bool invencible = false;
     public TextMeshPro uiTextPowerUp;
 
+    [Header("Coin Collector")]
+    public GameObject coinCollectorObject;
+
     #region privates
     private Vector3 _position;
     private bool _canRun;
@@ -66,6 +69,10 @@ public class PlayerController : Singleton<PlayerController>
     }
 
     #region PowerUps
+    public void ChangeCoinCollectorSize(float amount)
+    {
+        coinCollectorObject.transform.localScale = Vector3.one * amount;
+    }
     public void ChangeHeigh(float amount, float duration)
     {
         /*
