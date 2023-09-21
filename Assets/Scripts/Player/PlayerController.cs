@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ebac.core.Singleton;
 using TMPro;
+using DG.Tweening;
 public class PlayerController : Singleton<PlayerController>
 {
     [Header("Lerp Helper")]
@@ -24,10 +25,12 @@ public class PlayerController : Singleton<PlayerController>
     private Vector3 _position;
     private bool _canRun;
     private float _currentSpeed;
+    private Vector3 _startPosition;
     #endregion
 
     private void Start()
     {
+        _startPosition = transform.position;
         ResetSpeed();
     }
 
@@ -63,6 +66,27 @@ public class PlayerController : Singleton<PlayerController>
     }
 
     #region PowerUps
+    public void ChangeHeigh(float amount, float duration)
+    {
+        /*
+        var p = transform.position;
+        p.y = _startPosition.y + amount;
+        transform.position = p;
+        */
+
+        transform.DOMoveY(_startPosition.y + amount, .1f);//.OnComplete(ResetHeight);
+        Invoke("ResetHeight", duration);
+    }
+
+    public void ResetHeight()
+    {
+        /*
+        var p = transform.position;
+        p.y = _startPosition.y;
+        transform.position = p;
+        */
+        transform.DOMoveY(_startPosition.y, .1f);//.OnComplete(ResetHeight);
+    }
     public void SetPowerUpText(string text)
     {
         uiTextPowerUp.text = text;
