@@ -1486,7 +1486,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.14798538, y: 0.00016886744, z: -0.000025268122, w: 0.98898953}
+  m_LocalRotation: {x: 0.1479854, y: 0.0001688969, z: -0.00002527254, w: 0.98898953}
   m_LocalPosition: {x: -0.25, y: 3.6099994, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1647,7 +1647,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029866551}
-  m_LocalRotation: {x: 0.14798538, y: 0.00016886744, z: -0.000025268122, w: 0.98898953}
+  m_LocalRotation: {x: 0.1479854, y: 0.0001688969, z: -0.00002527254, w: 0.98898953}
   m_LocalPosition: {x: 3.3359013, y: 1.5134389, z: -15.204024}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2588,6 +2588,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5156129202013452133, guid: 89e20167823a30d459856414377997d1, type: 3}
   m_PrefabInstance: {fileID: 1964808174}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1454795014 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7193805671317595757, guid: 89e20167823a30d459856414377997d1, type: 3}
+  m_PrefabInstance: {fileID: 1964808174}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1492132878 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2174187759618766434, guid: 7bf939fe9ab2b844294354d5d75725e7, type: 3}
@@ -3403,6 +3408,22 @@ PrefabInstance:
     - target: {fileID: 5531986718136724959, guid: 89e20167823a30d459856414377997d1, type: 3}
       propertyPath: m_Name
       value: PFB_Astronaut Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995206069678388903, guid: 89e20167823a30d459856414377997d1, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1454795014}
+    - target: {fileID: 5995206069678388903, guid: 89e20167823a30d459856414377997d1, type: 3}
+      propertyPath: animatorSetup.Array.data[0].trigger
+      value: IDLE
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995206069678388903, guid: 89e20167823a30d459856414377997d1, type: 3}
+      propertyPath: animatorSetup.Array.data[1].trigger
+      value: Run
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995206069678388903, guid: 89e20167823a30d459856414377997d1, type: 3}
+      propertyPath: animatorSetup.Array.data[2].trigger
+      value: Death
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e20167823a30d459856414377997d1, type: 3}
