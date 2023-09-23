@@ -13,13 +13,14 @@ public class AnimatorManager : MonoBehaviour
         DEATH
     }
 
-    public void PlayAnimation(AnimationType type)
+    public void PlayAnimation(AnimationType type, float currentSpeedFactor = 1f)
     {
         foreach (var animation in animatorSetup)
         {
             if(animation.type == type)
             {
                 animator.SetTrigger(animation.trigger);
+                animator.speed = animation.speed * currentSpeedFactor;
                 break;
             }
         }
@@ -48,4 +49,5 @@ public class AnimatorSetup
 {
     public AnimatorManager.AnimationType type;
     public string trigger;
+    public float speed = 1f;
 }

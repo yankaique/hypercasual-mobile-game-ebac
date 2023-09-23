@@ -33,6 +33,7 @@ public class PlayerController : Singleton<PlayerController>
     private bool _canRun;
     private float _currentSpeed;
     private Vector3 _startPosition;
+    private float _baseSpeedToAnimation = 7;
     #endregion
 
     private void Start()
@@ -56,7 +57,7 @@ public class PlayerController : Singleton<PlayerController>
     public void StartToRun()
     {
         _canRun = true;
-        animatorManager.PlayAnimation(AnimatorManager.AnimationType.RUN);
+        animatorManager.PlayAnimation(AnimatorManager.AnimationType.RUN, _currentSpeed / _baseSpeedToAnimation);
         ResetSpeed();
     }
 
