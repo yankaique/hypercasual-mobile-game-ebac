@@ -1226,8 +1226,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0023346, y: -0.000030518}
-  m_SizeDelta: {x: 961.32, y: 1440}
+  m_AnchoredPosition: {x: 0.0033188, y: -0.000030518}
+  m_SizeDelta: {x: 1090.8, y: 1440}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &572935664 stripped
 Transform:
@@ -2052,8 +2052,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0023346, y: -0.000030518}
-  m_SizeDelta: {x: 961.32, y: 1440}
+  m_AnchoredPosition: {x: -0.0083389, y: -9.161}
+  m_SizeDelta: {x: 1090.8, y: 1458.322}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1230235506
 PrefabInstance:
@@ -2286,7 +2286,7 @@ GameObject:
   - component: {fileID: 1335516188}
   - component: {fileID: 1335516187}
   m_Layer: 5
-  m_Name: Image
+  m_Name: dark_background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2309,8 +2309,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: -5.7288}
-  m_SizeDelta: {x: 959.3102, y: 1451.9811}
+  m_AnchoredPosition: {x: -0.0054603, y: 0.0024389}
+  m_SizeDelta: {x: 1090.8, y: 1458.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1335516187
 MonoBehaviour:
@@ -2824,7 +2824,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1536336124}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.079, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2840,7 +2840,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1536336124}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -2942,7 +2942,7 @@ GameObject:
   - component: {fileID: 1605168717}
   - component: {fileID: 1605168716}
   m_Layer: 5
-  m_Name: Image
+  m_Name: dark_background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2965,8 +2965,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: -5.7288}
-  m_SizeDelta: {x: 959.3102, y: 1451.9811}
+  m_AnchoredPosition: {x: 1.335, y: -0.0011835}
+  m_SizeDelta: {x: 1086.27, y: 1440}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1605168716
 MonoBehaviour:
