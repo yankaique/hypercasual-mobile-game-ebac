@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1486,7 +1486,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.1479854, y: 0.0001688969, z: -0.00002527254, w: 0.98898953}
+  m_LocalRotation: {x: 0.14798538, y: 0.00016886744, z: -0.000025268122, w: 0.98898953}
   m_LocalPosition: {x: -0.25, y: 3.6099994, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1647,7 +1647,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029866551}
-  m_LocalRotation: {x: 0.1479854, y: 0.0001688969, z: -0.00002527254, w: 0.98898953}
+  m_LocalRotation: {x: 0.14798538, y: 0.00016886744, z: -0.000025268122, w: 0.98898953}
   m_LocalPosition: {x: 3.3359013, y: 1.5134389, z: -15.204024}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2593,6 +2593,17 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 7193805671317595757, guid: 89e20167823a30d459856414377997d1, type: 3}
   m_PrefabInstance: {fileID: 1964808174}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1454795015 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5995206069678388903, guid: 89e20167823a30d459856414377997d1, type: 3}
+  m_PrefabInstance: {fileID: 1964808174}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba17e8acbfcdf284daa63d620d02688d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1492132878 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2174187759618766434, guid: 7bf939fe9ab2b844294354d5d75725e7, type: 3}
@@ -2686,6 +2697,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: StartToRun
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 571469862}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3247,10 +3270,11 @@ MonoBehaviour:
   speed: 6
   tagToCheckEnemy: Enemy
   tagToCheckEndLine: EndLine
-  endScreen: {fileID: 556234862}
+  endScreen: {fileID: 1183569118}
   invencible: 1
   uiTextPowerUp: {fileID: 556234864}
   coinCollectorObject: {fileID: 1536336124}
+  animatorManager: {fileID: 1454795015}
 --- !u!4 &1852885496 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8609877202224102576, guid: c967ed721282e344183ad4f6e3e62f77, type: 3}
@@ -3630,7 +3654,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2109906975
 Transform:
   m_ObjectHideFlags: 0

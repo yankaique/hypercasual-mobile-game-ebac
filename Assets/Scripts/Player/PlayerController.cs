@@ -18,11 +18,15 @@ public class PlayerController : Singleton<PlayerController>
     public string tagToCheckEndLine = "EndLine";
 
     public GameObject endScreen;
+
     public bool invencible = false;
     public TextMeshPro uiTextPowerUp;
 
-    [Header("Coin Collector")]
+    [Header("Coin Setup")]
     public GameObject coinCollectorObject;
+
+    [Header("Animation Manager")]
+    public AnimatorManager animatorManager;
 
     #region privates
     private Vector3 _position;
@@ -34,6 +38,7 @@ public class PlayerController : Singleton<PlayerController>
     private void Start()
     {
         _startPosition = transform.position;
+        animatorManager.PlayAnimation(AnimatorManager.AnimationType.IDLE);
         ResetSpeed();
     }
 
@@ -51,21 +56,44 @@ public class PlayerController : Singleton<PlayerController>
     public void StartToRun()
     {
         _canRun = true;
+        animatorManager.PlayAnimation(AnimatorManager.AnimationType.RUN);
         ResetSpeed();
     }
 
-    private void EndGame()
+    private void EndGame(AnimatorManager.AnimationType animationType = AnimatorManager.AnimationType.IDLE)
     {
         _canRun = false;
+        animatorManager.PlayAnimation(animationType);
         endScreen.SetActive(true);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.tag == tagToCheckEnemy || collision.transform.tag == tagToCheckEndLine)
+        var isPlayerDead = collision.transform.tag == tagToCheckEnemy;
+        var isPlayerFinished = collision.transform.tag == tagToCheckEndLine;
+
+        if (isPlayerDead && !invencible)
         {
-            if(!invencible) EndGame();
+            PlayerDeath();
+        }else if (isPlayerFinished){
+            PlayerFinish();
         }
+    }
+
+    private void GoBackOnDeath()
+    {
+        transform.DOMoveZ(-1f, .3f).SetRelative();
+    }
+
+    private void PlayerDeath()
+    {
+        GoBackOnDeath();
+        EndGame(AnimatorManager.AnimationType.DEATH);
+    }
+
+    private void PlayerFinish()
+    {
+        EndGame();
     }
 
     #region PowerUps
