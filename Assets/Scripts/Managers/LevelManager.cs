@@ -18,9 +18,12 @@ public class LevelManager : MonoBehaviour
     public int pieceEndNumber = 5;
     public float timeBetweenSlices = .3f;
 
+    [Header("Art")]
+    public ArtManager.ArtType arType;
+
     [SerializeField] private int _index;
     private GameObject _currentLevel;
-    private List<LevelSliceBase> _spawnedPieces;
+    private List<LevelSliceBase> _spawnedPieces = new List<LevelSliceBase>();
 
     private void Awake()
     {
@@ -38,11 +41,21 @@ public class LevelManager : MonoBehaviour
     }
 
     #region Pieces
+    private void CleanSpawnedPiece()
+    {
+        for(int i = _spawnedPieces.Count - 1; i >= 0; i--)
+        {
+            Destroy(_spawnedPieces[i]);
+        }
+
+        _spawnedPieces.Clear();
+    }
+
     private void GenerateLevel()
     {
-        _spawnedPieces = new List<LevelSliceBase>();
+        CleanSpawnedPiece();
 
-        for(int i = 0; i < pieceStartNumber; i++) {
+        for (int i = 0; i < pieceStartNumber; i++) {
             CreateLevelPiece(levelStartPieces);
         }
         
@@ -63,8 +76,17 @@ public class LevelManager : MonoBehaviour
         {
             var lastPiece = _spawnedPieces[_spawnedPieces.Count - 1];
             newSliceOfMap.transform.position = lastPiece.finalSlice.position;
-
+        }else
+        {
+            newSliceOfMap.transform.localPosition = Vector3.zero;
         }
+
+        /*
+        foreach (var p in newSliceOfMap.GetComponentInChildren<ArtPiece>()) 
+        { 
+            p.ChangePiece(ArtManager.Instance.GetSetupByType(p.type).gameObject);
+        }
+        */
 
         _spawnedPieces.Add(newSliceOfMap);
     }
