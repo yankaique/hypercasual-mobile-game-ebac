@@ -305,6 +305,9 @@ MonoBehaviour:
   pieceEndNumber: 1
   timeBetweenSlices: 0.3
   artManager: {fileID: 1036994603}
+  scaleDuration: 0.1
+  scaleTimeBetweenSlices: 0.1
+  ease: 27
   _index: 0
 --- !u!4 &194360573
 Transform:

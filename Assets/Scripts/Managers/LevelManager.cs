@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class LevelManager : MonoBehaviour
 {
@@ -20,6 +21,12 @@ public class LevelManager : MonoBehaviour
 
     [Header("Art")]
     public ArtManager artManager;
+
+    [Header("Animation")]
+    public float scaleDuration = .1f;
+    public float scaleTimeBetweenSlices = .1f;
+    public Ease ease = Ease.OutBack;
+
 
     [SerializeField] private int _index;
     private GameObject _currentLevel;
@@ -69,6 +76,7 @@ public class LevelManager : MonoBehaviour
 
         var artType = RandomColor();
         ColorManager.Instance.ChangeColorByType(artType);
+        StartCoroutine(ScaleSliceByTime());
     }
 
     private ArtManager.ArtType RandomColor()
@@ -109,6 +117,22 @@ public class LevelManager : MonoBehaviour
         {
             CreateLevelPiece(levelStartPieces);
             yield return new WaitForSeconds(timeBetweenSlices);
+        }
+    }
+
+    IEnumerator ScaleSliceByTime()
+    {
+        foreach(var slice in _spawnedPieces)
+        {
+            slice.transform.localScale = Vector3.zero;
+        }
+
+        yield return null;
+
+        for(int i = 0;i < _spawnedPieces.Count; i++)
+        {
+            _spawnedPieces[i].transform.DOScale(1, scaleDuration).SetEase(ease);
+            yield return new WaitForSeconds(scaleTimeBetweenSlices);
         }
     }
 
