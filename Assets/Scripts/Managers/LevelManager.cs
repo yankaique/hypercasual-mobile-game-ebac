@@ -77,6 +77,7 @@ public class LevelManager : MonoBehaviour
         var artType = RandomColor();
         ColorManager.Instance.ChangeColorByType(artType);
         StartCoroutine(ScaleSliceByTime());
+        
     }
 
     private ArtManager.ArtType RandomColor()
@@ -134,6 +135,8 @@ public class LevelManager : MonoBehaviour
             _spawnedPieces[i].transform.DOScale(1, scaleDuration).SetEase(ease);
             yield return new WaitForSeconds(scaleTimeBetweenSlices);
         }
+
+        CoinsAnimationManager.Instance.StartAnimations();
     }
 
     #endregion
