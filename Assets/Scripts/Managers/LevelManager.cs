@@ -19,7 +19,7 @@ public class LevelManager : MonoBehaviour
     public float timeBetweenSlices = .3f;
 
     [Header("Art")]
-    public ArtManager.ArtType arType;
+    public ArtManager artManager;
 
     [SerializeField] private int _index;
     private GameObject _currentLevel;
@@ -66,7 +66,18 @@ public class LevelManager : MonoBehaviour
         for(int i = 0; i < pieceEndNumber; i++) {
             CreateLevelPiece(levelEndPieces);
         }
+
+        var artType = RandomColor();
+        ColorManager.Instance.ChangeColorByType(artType);
     }
+
+    private ArtManager.ArtType RandomColor()
+    {
+        var levelSlice = artManager.artSetup[Random.Range(0, artManager.artSetup.Count)];
+
+        return levelSlice.artType;
+    }
+
     private void CreateLevelPiece(List<LevelSliceBase> levelList)
     {
         var levelSlice = levelList[Random.Range(0, levelList.Count)];
