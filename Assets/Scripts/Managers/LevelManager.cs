@@ -25,11 +25,11 @@ public class LevelManager : MonoBehaviour
     private GameObject _currentLevel;
     private List<LevelSliceBase> _spawnedPieces = new List<LevelSliceBase>();
 
-    private void Awake()
+    private void Start()
     {
         // SpawnNextLevel();
-        GenerateLevel();
         //StartCoroutine(CreateLevelPieceCoroutine());
+        GenerateLevel();
     }
 
     private void Update()

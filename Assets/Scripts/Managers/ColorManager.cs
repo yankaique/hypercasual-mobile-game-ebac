@@ -11,10 +11,14 @@ public class ColorManager : Singleton<ColorManager>
     {
         var setup = colorSetups.Find(i => i.artType == artType);
 
-        for(int i = 0; i <= materials.Count; i++)
+        if(setup != null)
         {
-            materials[i].SetColor("_Color", setup.colors[i]);
+            for(int i = 0; i < materials.Count; i++)
+            {
+                materials[i].SetColor("_Color", setup.colors[i]);   
+            }
         }
+
     }
 }
 
