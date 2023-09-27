@@ -264,12 +264,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73266076}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62670de75d79c2e4c92fa69252c46503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itens: []
+  itens:
+  - {fileID: 0}
   scaleDuration: 0.1
   scaleTimeBetweenSlices: 0.1
   ease: 27
@@ -987,8 +988,6 @@ MonoBehaviour:
   - artType: 0
     colors:
     - {r: 0, g: 0.14326905, b: 0.43529412, a: 0}
-    - {r: 0.6509434, g: 0, b: 0, a: 0}
-    - {r: 0.6509804, g: 0.5308082, b: 0, a: 0}
   - artType: 1
     colors:
     - {r: 0.11186621, g: 0.4528302, b: 0, a: 0}
