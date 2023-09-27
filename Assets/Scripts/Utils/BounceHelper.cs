@@ -10,14 +10,6 @@ public class BounceHelper : MonoBehaviour
     public float scaleBounce = 1.2f;
     public Ease ease = Ease.OutBack;
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.M))
-        {
-            Bounce();
-        }
-    }
-
     public void Bounce()
     {
         transform.DOScale(scaleBounce, scaleDuration).SetEase(ease).SetLoops(2, LoopType.Yoyo);

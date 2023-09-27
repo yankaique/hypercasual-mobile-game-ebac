@@ -12,6 +12,7 @@ public class ItemCollectableCoin : ItemCollectableBase
     private void Start()
     {
         CoinsAnimationManager.Instance.RegisterCoin(this);
+        Debug.Log("Foi");
     }
 
     protected override void OnCollect()

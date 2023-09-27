@@ -109,6 +109,8 @@ public class LevelManager : MonoBehaviour
         */
 
         _spawnedPieces.Add(newSliceOfMap);
+        CoinsAnimationManager.Instance.StartAnimations();
+
     }
 
     IEnumerator CreateLevelPieceCoroutine()
@@ -135,9 +137,7 @@ public class LevelManager : MonoBehaviour
             _spawnedPieces[i].transform.DOScale(1, scaleDuration).SetEase(ease);
             yield return new WaitForSeconds(scaleTimeBetweenSlices);
         }
-
-        CoinsAnimationManager.Instance.StartAnimations();
-    }
+     }
 
     #endregion
 

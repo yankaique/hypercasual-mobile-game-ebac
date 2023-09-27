@@ -12,6 +12,7 @@ public class CoinsAnimationManager : Singleton<CoinsAnimationManager>
     [Header("Animation")]
     public float scaleDuration = .1f;
     public float scaleTimeBetweenSlices = .1f;
+    public float delayToStart = .5f;
     public Ease ease = Ease.OutBack;
 
     private void Start()
@@ -49,7 +50,7 @@ public class CoinsAnimationManager : Singleton<CoinsAnimationManager>
 
         for (int i = 0; i < itens.Count; i++)
         {
-            itens[i].transform.DOScale(1, scaleDuration).SetEase(ease);
+            itens[i].transform.DOScale(1, scaleDuration).SetEase(ease).SetDelay(delayToStart);
             yield return new WaitForSeconds(scaleTimeBetweenSlices);
         }
     }
