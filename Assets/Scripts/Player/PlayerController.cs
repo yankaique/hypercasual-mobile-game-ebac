@@ -28,6 +28,8 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Animation Manager")]
     public AnimatorManager animatorManager;
 
+    [SerializeField] private BounceHelper _bounceHelper;
+
     #region privates
     private Vector3 _position;
     private bool _canRun;
@@ -66,6 +68,14 @@ public class PlayerController : Singleton<PlayerController>
         _canRun = false;
         animatorManager.PlayAnimation(animationType);
         endScreen.SetActive(true);
+    }
+
+    public void Bounce()
+    {
+        if(_bounceHelper != null)
+        {
+            _bounceHelper.Bounce();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
