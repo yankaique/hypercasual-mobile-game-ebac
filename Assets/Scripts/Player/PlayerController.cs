@@ -58,6 +58,7 @@ public class PlayerController : Singleton<PlayerController>
 
     public void StartToRun()
     {
+        Bounce();
         _canRun = true;
         animatorManager.PlayAnimation(AnimatorManager.AnimationType.RUN, _currentSpeed / _baseSpeedToAnimation);
         ResetSpeed();
@@ -111,6 +112,7 @@ public class PlayerController : Singleton<PlayerController>
     public void ChangeCoinCollectorSize(float amount)
     {
         coinCollectorObject.transform.localScale = Vector3.one * amount;
+        if(amount == 1) uiTextPowerUp.text = "";
     }
     public void ChangeHeigh(float amount, float duration)
     {
@@ -121,6 +123,7 @@ public class PlayerController : Singleton<PlayerController>
         */
 
         transform.DOMoveY(_startPosition.y + amount, .1f);//.OnComplete(ResetHeight);
+        Bounce();
         Invoke("ResetHeight", duration);
     }
 
@@ -140,11 +143,13 @@ public class PlayerController : Singleton<PlayerController>
     public void PowerUpInvencible(bool d = true)
     {
         invencible = d;
+        Bounce();
     }
 
     public void PowerUpSpeedUp(float f)
     {
         _currentSpeed = f;
+        Bounce();
     }
 
     public void ResetSpeed()
