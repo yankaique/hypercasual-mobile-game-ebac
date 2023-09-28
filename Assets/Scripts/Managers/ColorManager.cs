@@ -13,9 +13,15 @@ public class ColorManager : Singleton<ColorManager>
 
         if(setup != null)
         {
+            int colorIndex = 0;
+
             for(int i = 0; i < materials.Count; i++)
             {
-                materials[i].SetColor("_Color", setup.colors[i]);   
+                materials[i].SetColor("_Color", setup.colors[colorIndex]);   
+                if(colorIndex + 1 < setup.colors.Count)
+                {
+                    colorIndex ++;
+                }
             }
         }
 
