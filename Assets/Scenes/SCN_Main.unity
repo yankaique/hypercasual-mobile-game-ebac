@@ -1365,7 +1365,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.14798538, y: 0.00016886744, z: -0.000025268122, w: 0.98898953}
+  m_LocalRotation: {x: 0.1479854, y: 0.0001688969, z: -0.00002527254, w: 0.98898953}
   m_LocalPosition: {x: -0.004098654, y: 3.673439, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1469,7 +1469,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029866551}
-  m_LocalRotation: {x: 0.14798538, y: 0.00016886744, z: -0.000025268122, w: 0.98898953}
+  m_LocalRotation: {x: 0.1479854, y: 0.0001688969, z: -0.00002527254, w: 0.98898953}
   m_LocalPosition: {x: -0.004098654, y: 3.673439, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2847,6 +2847,8 @@ MonoBehaviour:
   coinCollectorObject: {fileID: 1536336124}
   animatorManager: {fileID: 1454795015}
   VFXDeath: {fileID: 2053930409}
+  limits: 1
+  limitVector: {x: -4, y: 4}
   _bounceHelper: {fileID: 1848422995}
 --- !u!114 &1848422995
 MonoBehaviour:

@@ -28,8 +28,12 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Animation Manager")]
     public AnimatorManager animatorManager;
 
-    [Header("Death Particle")]
+    [Header("VFX")]
     public ParticleSystem VFXDeath;
+
+    [Header("Limits")]
+    public float limits = 4;
+    public Vector2 limitVector = new Vector2(-4,4);
 
     [SerializeField] private BounceHelper _bounceHelper;
 
@@ -54,6 +58,15 @@ public class PlayerController : Singleton<PlayerController>
         _position = target.position;
         _position.y = transform.position.y;
         _position.z = transform.position.z;
+
+        if (_position.x < limitVector.x)
+        {
+            _position.x = limitVector.x;
+        }
+        else if (_position.x > limitVector.y) 
+        {
+            _position.x = limitVector.y;
+        } 
 
         transform.position = Vector3.Lerp(transform.position, _position, lerpSpeed * Time.deltaTime);
         transform.Translate(transform.forward * _currentSpeed * Time.deltaTime);
