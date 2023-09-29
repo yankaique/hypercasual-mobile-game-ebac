@@ -28,6 +28,9 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Animation Manager")]
     public AnimatorManager animatorManager;
 
+    [Header("Death Particle")]
+    public ParticleSystem VFXDeath;
+
     [SerializeField] private BounceHelper _bounceHelper;
 
     #region privates
@@ -101,6 +104,10 @@ public class PlayerController : Singleton<PlayerController>
     {
         GoBackOnDeath();
         EndGame(AnimatorManager.AnimationType.DEATH);
+        if(VFXDeath != null)
+        {
+            VFXDeath.Play();
+        }
     }
 
     private void PlayerFinish()
