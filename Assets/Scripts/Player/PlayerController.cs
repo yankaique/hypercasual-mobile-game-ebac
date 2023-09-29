@@ -32,7 +32,7 @@ public class PlayerController : Singleton<PlayerController>
     public ParticleSystem VFXDeath;
 
     [Header("Limits")]
-    public float limits = 4;
+    //public float limits = 4;
     public Vector2 limitVector = new Vector2(-4,4);
 
     [SerializeField] private BounceHelper _bounceHelper;
